@@ -1,10 +1,13 @@
-import React from 'react';
-import Theme from './theme';
+import React, { Component } from "react";
+import ThemeContext from "./theme-context";
+import ThemedButton from "./themedbutton";
 
-const Sample = () => (
-    <Theme.Consumer>
-      {theme => <div>Theme value: {theme}</div>}
-    </Theme.Consumer>
-);
+const Sample = () => {
+  return (
+    <ThemeContext.Provider value="dark">
+      <ThemedButton />
+    </ThemeContext.Provider>
+  );
+};
 
 export default Sample;

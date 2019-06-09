@@ -1,12 +1,12 @@
-import React from 'react';
-import Theme from './theme.js';
+import React, { Component } from "react";
+import ThemeContext from "./theme-context";
 
-const ThemedButton = (props) => ( 
-  <React.Fragment>
-    <h3>Themed button</h3>
-    <Theme.Consumer> 
-    { theme => <button { ...props } > button with theme: {theme} </button>} 
-    </Theme.Consumer>
-  </React.Fragment>
-);
-export default ThemedButton
+const ThemedButton = () => {
+  return (
+    <ThemeContext.Consumer>
+      {da => <button>button with theme: {da}</button>}
+    </ThemeContext.Consumer>
+  );
+};
+
+export default ThemedButton;
